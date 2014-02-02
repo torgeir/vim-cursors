@@ -14,6 +14,10 @@ E.g. use, define these mappings in your .vimrc
     nmap <c-c><c-x> <Plug>CursorsSetMark
     nmap <c-c><c-w> <Plug>CursorsSetMarksForSearch
 
+Run tests (vspec):
+
+    rake
+
 Todo:
 
 - visual mode
