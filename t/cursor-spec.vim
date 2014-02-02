@@ -1,4 +1,4 @@
-source cursors.vim
+source plugin/cursors.vim
 
 describe "multiple cursors"
 
