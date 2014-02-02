@@ -1,6 +1,6 @@
 source plugin/cursors.vim
 
-describe "multiple cursors"
+describe "cursors"
 
   before
     new
