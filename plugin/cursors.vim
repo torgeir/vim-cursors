@@ -1,3 +1,8 @@
+if exists("g:cursors_loaded")
+  finish
+endif
+let g:cursors_loaded = 1
+
 let s:previousMarks = []
 let s:marks = []
 let s:highlights = []
