@@ -166,6 +166,19 @@ function! s:Log(...)
   echo "marks: " . join(a:000, " ")
 endfunction
 
+function! s:SetMarkForNextSearch(str)
+  " move to start of word
+  normal eb
+
+  call s:SetMark()
+
+  " keep the search, so manual movement works
+  let @/ = a:str
+
+  " move to next match"
+  call search(a:str, "W")
+endfunction
+
 function! s:SetMarksForSearch(str)
   " set a mark
   normal mc
@@ -191,3 +204,4 @@ noremap <unique> <silent> <Plug>CursorsCycleMarksNext :call <SID>CycleMarks(1)<c
 noremap <unique> <silent> <Plug>CursorsCycleMarksPrev :call <SID>CycleMarks(0)<cr>
 noremap <unique> <silent> <Plug>CursorsSetMark :call <SID>SetMark()<cr>
 noremap <unique> <silent> <Plug>CursorsSetMarksForSearch :silent call <SID>SetMarksForSearch("<c-r><c-w>")<cr>
+noremap <unique> <silent> <Plug>CursorsSetMarkForNextSearch :silent call <SID>SetMarkForNextSearch("<c-r><c-w>")<cr>
